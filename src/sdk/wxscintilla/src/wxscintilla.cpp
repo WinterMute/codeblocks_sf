@@ -355,6 +355,20 @@ void wxScintilla::SetUndoCollection(bool collectUndo)
     SendMsg(SCI_SETUNDOCOLLECTION, collectUndo, 0);
 }
 
+/* CHANGEBAR begin */
+// Choose between collecting actions into the changes
+// history and discarding them.
+void wxScintilla::SetChangeCollection(bool collectChange)
+{
+    SendMsg(SCI_SETCHANGECOLLECTION, collectChange, 0);
+}
+
+// Find a changed line, if fromLine > toLine search is performed backwards.
+int wxScintilla::FindChangedLine(const int fromLine, const int toLine) const
+{
+    return SendMsg(SCI_GETCHANGEDLINE, fromLine, toLine);
+}
+/* CHANGEBAR end */
 
 // Select all the text in the document.
 void wxScintilla::SelectAll()
@@ -1914,10 +1928,12 @@ bool wxScintilla::CanUndo() const
 }
 
 // Delete the undo history.
-void wxScintilla::EmptyUndoBuffer()
+/* CHANGEBAR begin */
+void wxScintilla::EmptyUndoBuffer(bool collectChangeHistory)
 {
-    SendMsg(SCI_EMPTYUNDOBUFFER, 0, 0);
+    SendMsg(SCI_EMPTYUNDOBUFFER, collectChangeHistory, 0);
 }
+/* CHANGEBAR end */
 
 // Undo one action in the undo history.
 void wxScintilla::Undo()
