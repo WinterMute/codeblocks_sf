@@ -59,6 +59,8 @@
 #include "scripting/bindings/sc_typeinfo_all.h"
 
 #include "compilerMINGW.h"
+#include "compilerdevkitARM.h"
+
 #include "compilerGNUARM.h"
 #include "compilerMSVC.h"
 #include "compilerMSVC8.h"
@@ -73,6 +75,7 @@
 #include "compilerGDC.h"
 #include "compilerGNUFortran.h"
 #include "compilerG95.h"
+
 #include "compilerXML.h"
 
 namespace ScriptBindings
@@ -915,6 +918,7 @@ void CompilerGCC::DoRegisterCompilers()
     CompilerFactory::RegisterCompiler(new CompilerGDC);
     CompilerFactory::RegisterCompiler(new CompilerGNUFortran);
     CompilerFactory::RegisterCompiler(new CompilerG95);
+    CompilerFactory::RegisterCompiler(new CompilerdevkitARM);
     if (platform::windows || platform::Linux || nonPlatComp)
         CompilerFactory::RegisterCompiler(new CompilerGNUARM);
 
