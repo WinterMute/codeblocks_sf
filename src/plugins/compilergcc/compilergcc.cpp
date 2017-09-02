@@ -903,28 +903,9 @@ void CompilerGCC::DoRegisterCompilers()
 
     // register built-in compilers
     CompilerFactory::RegisterCompiler(new CompilerMINGW);
-    if (platform::windows || nonPlatComp)
-    {
-        CompilerFactory::RegisterCompiler(new CompilerMSVC);
-        CompilerFactory::RegisterCompiler(new CompilerMSVC8);
-        CompilerFactory::RegisterCompiler(new CompilerMSVC10);
-        CompilerFactory::RegisterCompiler(new CompilerOW);
-        CompilerFactory::RegisterCompiler(new CompilerCYGWIN);
-        CompilerFactory::RegisterCompiler(new CompilerLCC);
-        CompilerFactory::RegisterCompiler(new CompilerKeilC51);
-        CompilerFactory::RegisterCompiler(new CompilerKeilCX51);
-        CompilerFactory::RegisterCompiler(new CompilerIAR(wxT("8051")));
-        CompilerFactory::RegisterCompiler(new CompilerIAR(wxT("ARM")));
-    }
-    CompilerFactory::RegisterCompiler(new CompilerICC);
-    CompilerFactory::RegisterCompiler(new CompilerGDC);
-    CompilerFactory::RegisterCompiler(new CompilerGNUFortran);
-    CompilerFactory::RegisterCompiler(new CompilerG95);
     CompilerFactory::RegisterCompiler(new CompilerdevkitARM);
     CompilerFactory::RegisterCompiler(new CompilerdevkitPPC);
     CompilerFactory::RegisterCompiler(new CompilerdevkitA64);
-    if (platform::windows || platform::Linux || nonPlatComp)
-        CompilerFactory::RegisterCompiler(new CompilerGNUARM);
 
     // register pure XML compilers
     // user paths first
