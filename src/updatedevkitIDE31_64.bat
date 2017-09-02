@@ -5,11 +5,11 @@ setlocal
 
 echo Creating output31_64 directory tree
 
-set CB_DEVEL_RESDIR=devel31_64\share\devkitIDE
-set CB_OUTPUT_RESDIR=output31_64\share\devkitIDE
+set CB_DEVEL_RESDIR=dkide_devel31_64\share\devkitIDE
+set CB_OUTPUT_RESDIR=dkide_output31_64\share\devkitIDE
 
-if not exist output31_64 md output31_64\
-if not exist output31_64\share md output31_64\share\
+if not exist dkide_output31_64 md dkide_output31_64\
+if not exist dkide_output31_64\share md dkide_output31_64\share\
 if not exist %CB_OUTPUT_RESDIR% md %CB_OUTPUT_RESDIR%\
 if not exist %CB_OUTPUT_RESDIR%\compilers md %CB_OUTPUT_RESDIR%\compilers\
 if not exist %CB_OUTPUT_RESDIR%\lexers md %CB_OUTPUT_RESDIR%\lexers\
@@ -22,8 +22,8 @@ if not exist %CB_OUTPUT_RESDIR%\templates md %CB_OUTPUT_RESDIR%\templates\
 if not exist %CB_OUTPUT_RESDIR%\templates\wizard md %CB_OUTPUT_RESDIR%\templates\wizard\
 if not exist %CB_OUTPUT_RESDIR%\scripts md %CB_OUTPUT_RESDIR%\scripts\
 if not exist %CB_OUTPUT_RESDIR%\scripts\tests md %CB_OUTPUT_RESDIR%\scripts\tests\
-if not exist devel31_64 md devel31_64\
-if not exist devel31_64\share md devel31_64\share\
+if not exist dkide_devel31_64 md dkide_devel31_64\
+if not exist dkide_devel31_64\share md dkide_devel31_64\share\
 if not exist %CB_DEVEL_RESDIR% md %CB_DEVEL_RESDIR%\
 if not exist %CB_DEVEL_RESDIR%\compilers md %CB_DEVEL_RESDIR%\compilers\
 if not exist %CB_DEVEL_RESDIR%\lexers md %CB_DEVEL_RESDIR%\lexers\
@@ -90,10 +90,6 @@ echo \.svn\      >> excludes31_64.txt
 echo *.gdb       >> excludes31_64.txt
 xcopy /D /y /s plugins\scriptedwizard\resources\* %CB_DEVEL_RESDIR%\templates\wizard /EXCLUDE:excludes31_64.txt >nul
 xcopy /D /y /s plugins\scriptedwizard\resources\* %CB_OUTPUT_RESDIR%\templates\wizard /EXCLUDE:excludes31_64.txt >nul
-rem xcopy /D /y templates\common\* %CB_OUTPUT_RESDIR%\templates /EXCLUDE:excludes31_64.txt > nul
-rem xcopy /D /y templates\win32\* %CB_OUTPUT_RESDIR%\templates /EXCLUDE:excludes31_64.txt > nul
-rem xcopy /D /y templates\common\* %CB_DEVEL_RESDIR%\templates /EXCLUDE:excludes31_64.txt > nul
-rem xcopy /D /y templates\win32\* %CB_DEVEL_RESDIR%\templates /EXCLUDE:excludes31_64.txt > nul
 xcopy /D /y scripts\*.gdb %CB_OUTPUT_RESDIR% > nul
 xcopy /D /y scripts\* %CB_DEVEL_RESDIR%\scripts /EXCLUDE:excludes31_64.txt > nul
 xcopy /D /y scripts\* %CB_OUTPUT_RESDIR%\scripts /EXCLUDE:excludes31_64.txt > nul
@@ -103,24 +99,24 @@ del excludes31_64.txt
 xcopy /D /y tips.txt %CB_DEVEL_RESDIR% > nul
 xcopy /D /y tips.txt %CB_OUTPUT_RESDIR% > nul
 echo Synching files between devel and output folder
-xcopy /D /y tools\ConsoleRunner\cb_console_runner31_64.exe devel31_64 > nul
-xcopy /D /y tools\ConsoleRunner\cb_console_runner31_64.exe output31_64 > nul
-if exist devel31_64\cb_console_runner.exe del devel31_64\cb_console_runner.exe > nul
-ren devel31_64\cb_console_runner31_64.exe cb_console_runner.exe > nul
-if exist output31_64\cb_console_runner.exe del output31_64\cb_console_runner.exe > nul
-ren output31_64\cb_console_runner31_64.exe cb_console_runner.exe > nul
-xcopy /D /y devel31_64\*.exe output31_64 > nul
-xcopy /D /y devel31_64\*.dll output31_64 > nul
+xcopy /D /y tools\ConsoleRunner\cb_console_runner31_64.exe dkide_devel31_64 > nul
+xcopy /D /y tools\ConsoleRunner\cb_console_runner31_64.exe dkide_output31_64 > nul
+if exist dkide_devel31_64\cb_console_runner.exe del dkide_devel31_64\cb_console_runner.exe > nul
+ren dkide_devel31_64\cb_console_runner31_64.exe cb_console_runner.exe > nul
+if exist dkide_output31_64\cb_console_runner.exe del dkide_output31_64\cb_console_runner.exe > nul
+ren dkide_output31_64\cb_console_runner31_64.exe cb_console_runner.exe > nul
+xcopy /D /y dkide_devel31_64\*.exe dkide_output31_64 > nul
+xcopy /D /y dkide_devel31_64\*.dll dkide_output31_64 > nul
 xcopy /D /y %CB_DEVEL_RESDIR%\plugins\*.dll %CB_OUTPUT_RESDIR%\plugins > nul
 
 echo Stripping debug info from output31_64 tree
-strip output31_64\*.exe
-strip output31_64\*.dll
+strip dkide_output31_64\*.exe
+strip dkide_output31_64\*.dll
 strip %CB_OUTPUT_RESDIR%\plugins\*.dll
 
 REM Copy these files later as stripping symbols would corrupt them
 echo Copying crash handler files
-xcopy /y exchndl\win64\bin\*.dll devel31_64  > nul
-xcopy /y exchndl\win64\bin\*.yes devel31_64  > nul
-xcopy /y exchndl\win64\bin\*.dll output31_64 > nul
-xcopy /y exchndl\win64\bin\*.yes output31_64 > nul
+xcopy /y exchndl\win64\bin\*.dll dkide_devel31_64  > nul
+xcopy /y exchndl\win64\bin\*.yes dkide_devel31_64  > nul
+xcopy /y exchndl\win64\bin\*.dll dkide_output31_64 > nul
+xcopy /y exchndl\win64\bin\*.yes dkide_output31_64 > nul

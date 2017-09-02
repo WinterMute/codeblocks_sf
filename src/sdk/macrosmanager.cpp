@@ -113,7 +113,7 @@ void MacrosManager::ClearProjectKeys()
     m_Macros.clear();
 
     m_Macros[_T("AMP")]        = _T("&");
-    m_Macros[_T("CODEBLOCKS")] = m_AppPath;
+    m_Macros[_T("DEVKITIDE")]  = m_AppPath;
     m_Macros[_T("APP_PATH")]   = m_AppPath;
     m_Macros[_T("APP-PATH")]   = m_AppPath;
     m_Macros[_T("APPPATH")]    = m_AppPath;

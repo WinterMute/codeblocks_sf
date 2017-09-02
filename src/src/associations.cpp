@@ -197,14 +197,14 @@ void Associations::DoClearAssociation(const wxString& ext)
     {
         wxString s;
         #if wxCHECK_VERSION(3, 0, 0)
-        if (key.QueryValue(wxEmptyString, s) && s.StartsWith(_T("CodeBlocks")))
+        if (key.QueryValue(wxEmptyString, s) && s.StartsWith(_T("devkitIDE")))
         #else
-        if (key.QueryValue(NULL, s) && s.StartsWith(_T("CodeBlocks")))
+        if (key.QueryValue(NULL, s) && s.StartsWith(_T("devkitIDE")))
         #endif
             key.DeleteSelf();
     }
 
-    key.SetName(BaseKeyName + _T("CodeBlocks.") + ext);
+    key.SetName(BaseKeyName + _T("devkitIDE.") + ext);
     if (key.Exists())
         key.DeleteSelf();
 }
@@ -221,11 +221,11 @@ bool Associations::DoCheckAssociation(const wxString& ext, cb_unused const wxStr
     if (!key.Exists())
         return false;
 
-    key.SetName(BaseKeyName + _T("CodeBlocks.") + ext);
+    key.SetName(BaseKeyName + _T("devkitIDE.") + ext);
     if (!key.Exists())
         return false;
 
-    key.SetName(BaseKeyName + _T("CodeBlocks.") + ext + _T("\\DefaultIcon"));
+    key.SetName(BaseKeyName + _T("devkitIDE.") + ext + _T("\\DefaultIcon"));
     if (!key.Exists())
         return false;
     wxString strVal;
@@ -234,7 +234,7 @@ bool Associations::DoCheckAssociation(const wxString& ext, cb_unused const wxStr
     if (strVal != wxString::Format(_T("%s,%d"), exe.c_str(), icoNum))
         return false;
 
-    key.SetName(BaseKeyName + _T("CodeBlocks.") + ext + _T("\\shell\\open\\command"));
+    key.SetName(BaseKeyName + _T("devkitIDE.") + ext + _T("\\shell\\open\\command"));
     if (!key.Open())
         return false;
     if (!key.QueryValue(wxEmptyString, strVal))
@@ -245,7 +245,7 @@ bool Associations::DoCheckAssociation(const wxString& ext, cb_unused const wxStr
     if (ext.IsSameAs(FileFilters::CODEBLOCKS_EXT) || ext.IsSameAs(FileFilters::WORKSPACE_EXT))
     {
         wxString batchbuildargs = Manager::Get()->GetConfigManager(_T("app"))->Read(_T("/batch_build_args"), appglobals::DefaultBatchBuildArgs);
-        key.SetName(BaseKeyName + _T("CodeBlocks.") + ext + _T("\\shell\\Build\\command"));
+        key.SetName(BaseKeyName + _T("devkitIDE.") + ext + _T("\\shell\\Build\\command"));
         if (!key.Open())
             return false;
         if (!key.QueryValue(wxEmptyString, strVal))
@@ -253,7 +253,7 @@ bool Associations::DoCheckAssociation(const wxString& ext, cb_unused const wxStr
         if (strVal != _T("\"") + exe + _T("\" ") + batchbuildargs + _T(" --build \"%1\""))
             return false;
 
-        key.SetName(BaseKeyName + _T("CodeBlocks.") + ext + _T("\\shell\\Rebuild (clean)\\command"));
+        key.SetName(BaseKeyName + _T("devkitIDE.") + ext + _T("\\shell\\Rebuild (clean)\\command"));
         if (!key.Open())
             return false;
         if (!key.QueryValue(wxEmptyString, strVal))

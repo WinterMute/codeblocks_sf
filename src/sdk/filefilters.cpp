@@ -25,17 +25,9 @@ void FileFilters::AddDefaultFileFilters()
     if (s_Filters.size() != 0)
         return;
 
-    Add(_("Code::Blocks workspace files"),         _T("*.workspace"));
-    Add(_("Code::Blocks project files"),           _T("*.cbp"));
-    Add(_("Code::Blocks project/workspace files"), _T("*.workspace;*.cbp"));
-    Add(_("Bloodshed Dev-C++ project files"),      _T("*.dev"));
-    Add(_("MS Visual C++ 6.0 project files"),      _T("*.dsp"));
-    Add(_("MS Visual Studio 7.0+ project files"),  _T("*.vcproj"));
-    Add(_("MS Visual C++ 6.0 workspace files"),    _T("*.dsw"));
-    Add(_("MS Visual Studio 7.0+ solution files"), _T("*.sln"));
-    Add(_("Apple Xcode 1.x project bundles"),      _T("*.xcode"));
-    Add(_("Apple Xcode 2.x project bundles"),      _T("*.xcodeproj"));
-    Add(_("MS Visual Studio 10.0+ project files"), _T("*.vcxproj"));
+    Add(_("Code::Blocks workspace files"),         _T("*.dkWorkspace"));
+    Add(_("Code::Blocks project files"),           _T("*.dkp"));
+    Add(_("Code::Blocks project/workspace files"), _T("*.dkWorkspace;*.dkp"));
 }
 
 bool FileFilters::Add(const wxString& name, const wxString& mask)
@@ -143,8 +135,8 @@ bool FileFilters::GetFilterNameFromIndex(const wxString& FiltersList, int Index,
 
 // define some constants used throughout C::B
 
-const wxString FileFilters::WORKSPACE_EXT           = _T("workspace");
-const wxString FileFilters::CODEBLOCKS_EXT          = _T("cbp");
+const wxString FileFilters::WORKSPACE_EXT           = _T("dkWorkspace");
+const wxString FileFilters::CODEBLOCKS_EXT          = _T("dkp");
 const wxString FileFilters::DEVCPP_EXT              = _T("dev");
 const wxString FileFilters::MSVC6_EXT               = _T("dsp");
 const wxString FileFilters::MSVC7_EXT               = _T("vcproj");

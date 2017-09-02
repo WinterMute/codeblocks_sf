@@ -18,8 +18,8 @@
 
 namespace appglobals
 {
-    const wxString AppVendor             = _T("Code::Blocks");
-    const wxString AppName               = _T("Code::Blocks");
+    const wxString AppVendor             = _T("devkitPro");
+    const wxString AppName               = _T("devkitIDE");
 
 #if SVN_BUILD
     const wxString AppVersion            = _T("svn build");
@@ -36,8 +36,8 @@ namespace appglobals
                                                             static_cast<int>(PLUGIN_SDK_VERSION_MINOR),
                                                             static_cast<int>(PLUGIN_SDK_VERSION_RELEASE));
 
-    const wxString AppUrl                = _T("http://www.codeblocks.org");
-    const wxString AppContactEmail       = _T("info@codeblocks.org");
+    const wxString AppUrl                = _T("https://devkitpro.org");
+    const wxString AppContactEmail       = _T("info@devkitpro.org");
 
 #if defined(__WXMSW__)
     const wxString AppPlatform           = _T("Windows");

@@ -1,6 +1,12 @@
 /src/.objs*
 /src/devel*
 /src/output*
+.dkide_objs*
+/src/dkide_devel*
+/src/dkide_output*
+debug
+release
+*.gch
 *.layout
 *.depend
 autorevision.h

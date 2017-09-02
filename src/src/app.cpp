@@ -299,12 +299,12 @@ class Splash
         {
             if (show)
             {
-                wxBitmap bmp = cbLoadBitmap(ConfigManager::ReadDataPath() + _T("/images/splash_1312.png"));
+                wxBitmap bmp = cbLoadBitmap(ConfigManager::ReadDataPath() + _T("/images/devkitide.png"));
                 wxMemoryDC dc;
                 dc.SelectObject(bmp);
                 cbSplashScreen::DrawReleaseInfo(dc);
                 dc.SelectObject(wxNullBitmap);
-                m_pSplash = new cbSplashScreen(bmp);
+                m_pSplash = new cbSplashScreen(bmp, -1, nullptr, -1, wxNO_BORDER | wxFRAME_NO_TASKBAR | wxFRAME_SHAPED);
                 Manager::Yield();
             }
         }
@@ -423,7 +423,7 @@ bool CodeBlocksApp::LoadConfig()
             data = env;
     }
 
-    data.append(_T("/share/codeblocks"));
+    data.append(_T("/share/devkitide"));
 
     // Make sure the path to our resources is always an absolute path, because resource loading
     // would fail with a relative path if some part of the code changes the current working
@@ -595,7 +595,7 @@ bool CodeBlocksApp::OnInit()
 
     wxLog::EnableLogging(true);
 
-    SetAppName(_T("codeblocks"));
+    SetAppName(_T("devkitIDE"));
 
     s_Loading              = true;
     m_pBatchBuildDialog    = nullptr;
@@ -713,7 +713,7 @@ bool CodeBlocksApp::OnInit()
         if (   Manager::Get()->GetConfigManager(_T("app"))->ReadBool(_T("/environment/single_instance"), true)
             && !parser.Found(_T("multiple-instance")) )
         {
-            const wxString name = wxString::Format(_T("Code::Blocks-%s"), wxGetUserId().wx_str());
+            const wxString name = wxString::Format(_T("devkitIDE-%s"), wxGetUserId().wx_str());
 
             m_pSingleInstance = new wxSingleInstanceChecker(name, ConfigManager::GetTempFolder());
             if (m_pSingleInstance->IsAnotherRunning())

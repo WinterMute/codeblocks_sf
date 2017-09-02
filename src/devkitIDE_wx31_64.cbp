@@ -2,25 +2,25 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="devkitIDE wx3.1.x (64 bit)" />
+		<Option title="Code::Blocks wx3.1.x (64 bit)" />
 		<Option default_target="src" />
-		<Option compiler="mingw64" />
+		<Option compiler="gcc" />
 		<Build>
 			<Target title="tinyXML">
 				<Option output="base/tinyxml/txml31_64" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output=".objs31_64" />
+				<Option object_output=".dkide_objs31_64" />
 				<Option type="2" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Compiler>
 					<Add directory="include/tinyxml" />
 				</Compiler>
 			</Target>
 			<Target title="AutoRevision">
 				<Option output="build_tools/autorevision/autorevision31_64" prefix_auto="1" extension_auto="1" />
-				<Option object_output=".objs31_64" />
+				<Option object_output=".dkide_objs31_64" />
 				<Option type="1" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="-v +wx +int +t .. include/autorevision.h" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -35,9 +35,9 @@
 			<Target title="ConsoleRunner">
 				<Option output="tools/ConsoleRunner/cb_console_runner31_64" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="tools/ConsoleRunner" />
-				<Option object_output=".objs31_64" />
+				<Option object_output=".dkide_objs31_64" />
 				<Option type="1" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-Os" />
@@ -46,9 +46,9 @@
 			<Target title="Squirrel">
 				<Option output="sdk/scripting/lib/squirrel31_64" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output=".objs31_64" />
+				<Option object_output=".dkide_objs31_64" />
 				<Option type="2" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-fno-inline" />
 					<Add directory="include/scripting/include" />
@@ -58,10 +58,10 @@
 			<Target title="Squirrel std lib">
 				<Option output="sdk/scripting/lib/sqstdlib31_64" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output=".objs31_64" />
+				<Option object_output=".dkide_objs31_64" />
 				<Option external_deps="sdk/scripting/lib/libsquirrel31_64.a;" />
 				<Option type="2" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-fno-inline" />
 					<Add directory="include/scripting/include" />
@@ -71,10 +71,10 @@
 			<Target title="SqPlus">
 				<Option output="sdk/scripting/lib/sqplus31_64" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output=".objs31_64" />
+				<Option object_output=".dkide_objs31_64" />
 				<Option external_deps="sdk/scripting/lib/libsquirrel31_64.a;sdk/scripting/lib/libsqstdlib31_64.a;" />
 				<Option type="2" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-fno-inline" />
 					<Add directory="include/scripting/include" />
@@ -82,11 +82,11 @@
 				</Compiler>
 			</Target>
 			<Target title="scintilla">
-				<Option output="devel31_64/wxscintilla_cb" prefix_auto="1" extension_auto="1" />
+				<Option output="dkide_devel31_64/wxscintilla_cb" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output=".objs31_64" />
+				<Option object_output=".dkide_objs31_64" />
 				<Option type="2" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-D__WX__" />
 					<Add option="-DWINVER=0x0501" />
@@ -109,12 +109,12 @@
 				</Linker>
 			</Target>
 			<Target title="sdk">
-				<Option output="devel31_64/codeblocks" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="base/tinyxml/libtxml31_64.a;sdk/scripting/lib/libsquirrel31_64.a;sdk/scripting/lib/libsqstdlib31_64.a;sdk/scripting/lib/libsqplus31_64.a;devel31_64/libwxscintilla_cb.a;" />
+				<Option output="dkide_devel31_64/codeblocks" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="base/tinyxml/libtxml31_64.a;sdk/scripting/lib/libsquirrel31_64.a;sdk/scripting/lib/libsqstdlib31_64.a;sdk/scripting/lib/libsqplus31_64.a;dkide_devel31_64/libwxscintilla_cb.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --verbose -p debug" />
 				<Option createStaticLib="1" />
 				<Option projectLinkerOptionsRelation="2" />
@@ -148,24 +148,24 @@
 					<Add library="sqstdlib31_64" />
 					<Add library="squirrel31_64" />
 					<Add library="gdi32" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 					<Add directory="sdk/scripting/lib" />
 				</Linker>
 				<ExtraCommands>
 					<Add before="build_tools\autorevision\autorevision31_64 +wx +int +t .. include/autorevision.h" />
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\manager_resources.zip sdk\resources\*.xrc" />
-					<Add after='cmd /c &quot;cd sdk\resources &amp; zip -0 -q ..\..\devel31_64\share\$(CB_DATADIR)\manager_resources.zip images\*.png images\12x12\*.png images\16x16\*.png&quot;' />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\manager_resources.zip sdk\resources\*.xrc" />
+					<Add after='cmd /c &quot;cd sdk\resources &amp; zip -0 -q ..\..\dkide_devel31_64\share\$(CB_DATADIR)\manager_resources.zip images\*.png images\12x12\*.png images\16x16\*.png&quot;' />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="src">
-				<Option output="devel31_64/devkitIDE" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option output="dkide_devel31_64/devkitIDE" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;" />
 				<Option type="0" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
@@ -201,29 +201,29 @@
 					<Add library="rpcrt4" />
 					<Add library="advapi32" />
 					<Add library="wsock32" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 					<Add directory="exchndl/win64/lib" />
 				</Linker>
 				<ExtraCommands>
-					<Add before="cmd /c if exist devel31_64\exchndl.dll del devel31_64\exchndl.dll" />
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\resources.zip src\resources\*.xrc" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\start_here.zip src\resources\start_here\*.html src\resources\start_here\*.png" />
-					<Add after='cmd /c &quot;cd src\resources &amp; zip -0 -q ..\..\devel31_64\share\$(CB_DATADIR)\resources.zip images\*.png images\16x16\*.png&quot;' />
-					<Add after="cmd /c if not exist devel31_64\exchndl.dll if exist exchndl\win64\bin\*.dll xcopy /Y exchndl\win64\bin\*.dll devel31_64\" />
-					<Add after="cmd /c if not exist devel31_64\symsrv.yes if exist exchndl\win64\bin\symsrv.yes xcopy /Y exchndl\win64\bin\symsrv.yes devel31_64\" />
+					<Add before="cmd /c if exist dkide_devel31_64\exchndl.dll del dkide_devel31_64\exchndl.dll" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATA mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\resources.zip src\resources\*.xrc" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\start_here.zip src\resources\start_here\*.html src\resources\start_here\*.png" />
+					<Add after='cmd /c &quot;cd src\resources &amp; zip -0 -q ..\..\dkide_devel31_64\share\$(CB_DATADIR)\resources.zip images\*.png images\16x16\*.png&quot;' />
+					<Add after="cmd /c if not exist dkide_devel31_64\exchndl.dll if exist exchndl\win64\bin\*.dll xcopy /Y exchndl\win64\bin\*.dll dkide_devel31_64\" />
+					<Add after="cmd /c if not exist dkide_devel31_64\symsrv.yes if exist exchndl\win64\bin\symsrv.yes xcopy /Y exchndl\win64\bin\symsrv.yes dkide_devel31_64\" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Abbreviations">
-				<Option output="devel31_64/share/$(CB_DATADIR)/plugins/abbreviations" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option output="dkide_devel31_64/share/$(CB_DATADIR)/plugins/abbreviations" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./devkitIDE.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -241,23 +241,23 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\abbreviations.zip plugins\abbreviations\resources\manifest.xml plugins\abbreviations\resources\*.xrc" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\abbreviations.zip plugins\abbreviations\resources\manifest.xml plugins\abbreviations\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="AStyle">
-				<Option output="devel31_64/share/$(CB_DATADIR)/plugins/astyle" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option output="dkide_devel31_64/share/$(CB_DATADIR)/plugins/astyle" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./devkitIDE.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -274,23 +274,23 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\astyle.zip plugins\astyle\resources\manifest.xml plugins\astyle\resources\*.xrc" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\astyle.zip plugins\astyle\resources\manifest.xml plugins\astyle\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Autosave">
-				<Option output="devel31_64/share/$(CB_DATADIR)/plugins/autosave" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option output="dkide_devel31_64/share/$(CB_DATADIR)/plugins/autosave" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./devkitIDE.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -305,20 +305,20 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\autosave.zip plugins\autosave\manifest.xml plugins\autosave\*.xrc" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\autosave.zip plugins\autosave\manifest.xml plugins\autosave\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Compiler depslib">
 				<Option output="plugins/compilergcc/depslib/depslib31_64" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output=".objs31_64" />
+				<Option object_output=".dkide_objs31_64" />
 				<Option type="2" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-DDEPSLIB_WINDOWS" />
 				</Compiler>
@@ -328,14 +328,14 @@
 				</Linker>
 			</Target>
 			<Target title="Compiler">
-				<Option output="devel31_64/share/$(CB_DATADIR)/plugins/compiler" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;plugins/compilergcc/depslib/libdepslib31_64.a;" />
+				<Option output="dkide_devel31_64/share/$(CB_DATADIR)/plugins/compiler" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;plugins/compilergcc/depslib/libdepslib31_64.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./devkitIDE.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -354,34 +354,32 @@
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 					<Add library="depslib31_64" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 					<Add directory="plugins/compilergcc/depslib" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\compiler.zip plugins\compilergcc\resources\manifest.xml plugins\compilergcc\resources\*.xrc" />
-					<Add after='cmd /c &quot;cd plugins\compilergcc\resources &amp; zip -0 -q ..\..\..\devel31_64\share\$(CB_DATADIR)\compiler.zip images\*.png images\16x16\*.png&quot;' />
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR)\compilers mkdir devel31_64\share\$(CB_DATADIR)\compilers" />
-					<Add after="cmd /c xcopy /D /Y plugins\compilergcc\resources\compilers\*.* devel31_64\share\$(CB_DATADIR)\compilers" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\compiler.zip plugins\compilergcc\resources\manifest.xml plugins\compilergcc\resources\*.xrc" />
+					<Add after='cmd /c &quot;cd plugins\compilergcc\resources &amp; zip -0 -q ..\..\..\dkide_devel31_64\share\$(CB_DATADIR)\compiler.zip images\*.png images\16x16\*.png&quot;' />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR)\compilers mkdir dkide_devel31_64\share\$(CB_DATADIR)\compilers" />
+					<Add after="cmd /c xcopy /D /Y plugins\compilergcc\resources\compilers\*.* dkide_devel31_64\share\$(CB_DATADIR)\compilers" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Debugger">
-				<Option output="devel31_64/share/$(CB_DATADIR)/plugins/debugger" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option output="dkide_devel31_64/share/$(CB_DATADIR)/plugins/debugger" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./devkitIDE.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-DBUILDING_PLUGIN" />
 					<Add directory="include" />
-					<Add directory="include/scripting/include" />
-					<Add directory="include/scripting/sqplus" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--enable-auto-image-base" />
@@ -391,23 +389,23 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\debugger.zip plugins\debuggergdb\resources\manifest.xml plugins\debuggergdb\resources\*.xrc" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\debugger.zip plugins\debuggergdb\resources\manifest.xml plugins\debuggergdb\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Code-completion">
-				<Option output="devel31_64/share/$(CB_DATADIR)/plugins/codecompletion" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option output="dkide_devel31_64/share/$(CB_DATADIR)/plugins/codecompletion" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./devkitIDE.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -429,23 +427,23 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\codecompletion.zip plugins\codecompletion\resources\manifest.xml plugins\codecompletion\resources\*.xrc" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\codecompletion.zip plugins\codecompletion\resources\manifest.xml plugins\codecompletion\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Class wizard">
-				<Option output="devel31_64/share/$(CB_DATADIR)/plugins/classwizard" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option output="dkide_devel31_64/share/$(CB_DATADIR)/plugins/classwizard" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./devkitIDE.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -460,23 +458,23 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\classwizard.zip plugins\classwizard\resources\manifest.xml plugins\classwizard\resources\*.xrc" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\classwizard.zip plugins\classwizard\resources\manifest.xml plugins\classwizard\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Default MIME handler">
-				<Option output="devel31_64/share/$(CB_DATADIR)/plugins/defaultmimehandler" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option output="dkide_devel31_64/share/$(CB_DATADIR)/plugins/defaultmimehandler" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./devkitIDE.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -491,23 +489,23 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\defaultmimehandler.zip plugins\defaultmimehandler\resources\manifest.xml plugins\defaultmimehandler\resources\*.xrc" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\defaultmimehandler.zip plugins\defaultmimehandler\resources\manifest.xml plugins\defaultmimehandler\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Occurrences Highlighting">
-				<Option output="devel31_64/share/$(CB_DATADIR)/plugins/OccurrencesHighlighting" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option output="dkide_devel31_64/share/$(CB_DATADIR)/plugins/OccurrencesHighlighting" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./devkitIDE.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -522,23 +520,23 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -j9 devel31_64\share\$(CB_DATADIR)\OccurrencesHighlighting.zip plugins\occurrenceshighlighting\resources\manifest.xml plugins\occurrenceshighlighting\resources\*.xrc" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -j9 dkide_devel31_64\share\$(CB_DATADIR)\OccurrencesHighlighting.zip plugins\occurrenceshighlighting\resources\manifest.xml plugins\occurrenceshighlighting\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Open files list">
-				<Option output="devel31_64/share/$(CB_DATADIR)/plugins/openfileslist" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option output="dkide_devel31_64/share/$(CB_DATADIR)/plugins/openfileslist" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./devkitIDE.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -553,23 +551,23 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR) \openfileslist.zip plugins\openfileslist\manifest.xml" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\openfileslist.zip plugins\openfileslist\manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Projects-workspaces importer">
-				<Option output="devel31_64/share/$(CB_DATADIR)/plugins/projectsimporter" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option output="dkide_devel31_64/share/$(CB_DATADIR)/plugins/projectsimporter" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./devkitIDE.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -590,23 +588,23 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\projectsimporter.zip plugins\projectsimporter\resources\manifest.xml plugins\projectsimporter\resources\*.xrc" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\projectsimporter.zip plugins\projectsimporter\resources\manifest.xml plugins\projectsimporter\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Scripted wizard">
-				<Option output="devel31_64/share/$(CB_DATADIR)/plugins/scriptedwizard" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option output="dkide_devel31_64/share/$(CB_DATADIR)/plugins/scriptedwizard" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./devkitIDE.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -623,23 +621,23 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\scriptedwizard.zip plugins\scriptedwizard\resources\manifest.xml" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\scriptedwizard.zip plugins\scriptedwizard\resources\manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="To-do">
-				<Option output="devel31_64/share/$(CB_DATADIR)/plugins/todo" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option output="dkide_devel31_64/share/$(CB_DATADIR)/plugins/todo" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./devkitIDE.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -660,23 +658,23 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\todo.zip plugins\todo\resources\manifest.xml plugins\todo\resources\*.xrc" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\todo.zip plugins\todo\resources\manifest.xml plugins\todo\resources\*.xrc" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
 			<Target title="XP look &amp; feel">
-				<Option output="devel31_64/share/$(CB_DATADIR)/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="devel31_64" />
-				<Option object_output=".objs31_64" />
-				<Option external_deps="devel31_64/libcodeblocks.a;" />
+				<Option output="dkide_devel31_64/share/$(CB_DATADIR)/plugins/xpmanifest" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="dkide_devel31_64" />
+				<Option object_output=".dkide_objs31_64" />
+				<Option external_deps="dkide_devel31_64/libcodeblocks.a;" />
 				<Option type="3" />
-				<Option compiler="mingw64" />
+				<Option compiler="gcc" />
 				<Option parameters="--debug-log --no-dde --no-check-associations --multiple-instance --no-splash-screen --verbose -p debug" />
-				<Option host_application="./codeblocks.exe" />
+				<Option host_application="./devkitIDE.exe" />
 				<Option run_host_application_in_terminal="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
@@ -691,11 +689,11 @@
 					<Add option="-mthreads" />
 					<Add library="codeblocks" />
 					<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
-					<Add directory="devel31_64" />
+					<Add directory="dkide_devel31_64" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="cmd /c if not exist devel31_64\share\$(CB_DATADIR) mkdir devel31_64\share\$(CB_DATADIR)" />
-					<Add after="zip -jq9 devel31_64\share\$(CB_DATADIR)\xpmanifest.zip plugins\xpmanifest\manifest.xml" />
+					<Add after="cmd /c if not exist dkide_devel31_64\share\$(CB_DATADIR) mkdir dkide_devel31_64\share\$(CB_DATADIR)" />
+					<Add after="zip -jq9 dkide_devel31_64\share\$(CB_DATADIR)\xpmanifest.zip plugins\xpmanifest\manifest.xml" />
 					<Mode after="always" />
 				</ExtraCommands>
 			</Target>
@@ -714,6 +712,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-std=c++11" />
+			<Add option="-m64" />
 			<Add option="$(#CB_RELEASE_TYPE)" />
 			<Add option="-pipe" />
 			<Add option="-mthreads" />
@@ -737,6 +736,7 @@
 			<Add directory="$(#WX31_64)/lib/gcc_dll$(WX_CFG)/msw$(WX_SUFFIX)" />
 		</ResourceCompiler>
 		<Linker>
+			<Add option="-m64" />
 			<Add library="wxmsw$(WX_VERSION)$(WX_SUFFIX)" />
 			<Add directory="base/tinyxml" />
 			<Add directory="$(#WX31_64.lib)/gcc_dll$(WX_CFG)" />
@@ -1708,10 +1708,22 @@
 		<Unit filename="plugins/compilergcc/compiler_defs.h">
 			<Option target="Compiler" />
 		</Unit>
+		<Unit filename="plugins/compilergcc/compilerdevkitA64.cpp">
+			<Option target="Compiler" />
+		</Unit>
+		<Unit filename="plugins/compilergcc/compilerdevkitA64.h">
+			<Option target="Compiler" />
+		</Unit>
 		<Unit filename="plugins/compilergcc/compilerdevkitARM.cpp">
 			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/compilerdevkitARM.h">
+			<Option target="Compiler" />
+		</Unit>
+		<Unit filename="plugins/compilergcc/compilerdevkitPPC.cpp">
+			<Option target="Compiler" />
+		</Unit>
+		<Unit filename="plugins/compilergcc/compilerdevkitPPC.h">
 			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/compilererrors.cpp">

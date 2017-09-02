@@ -16,11 +16,11 @@
         #include <windows.h>
         #include <wincon.h>
     #endif
-    #define DDE_SERVICE    _T("CODEBLOCKS")
+    #define DDE_SERVICE    _T("DEVKITIDE")
 #else
-    #define DDE_SERVICE    _T("/tmp/CODEBLOCKS%s.socket")
+    #define DDE_SERVICE    _T("/tmp/DEVKITIDE%s.socket")
 #endif
-#define DDE_TOPIC    _T("CodeBlocksDDEServer")
+#define DDE_TOPIC    _T("devkitIDEDDEServer")
 #include <wx/ipc.h>
 
 class wxCheckListBox;

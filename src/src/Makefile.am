@@ -13,7 +13,7 @@ if CODEBLOCKS_LINUX
 AM_CPPFLAGS += -DENABLE_BINRELOC -DAPP_PREFIX="\"@prefix@\"" $(WX_GTK_CFLAGS) $(GTK_NOTEBOOK_FLAGS)
 endif
 
-bin_PROGRAMS = codeblocks
+bin_PROGRAMS = devkitide
 
 # wxMac resource fork/unbundled app
 install-exec-hook:
@@ -24,11 +24,11 @@ install-exec-hook:
 # wxAUI uses GTK+ libraries on wxGTK
 # codeblocks_LDFLAGS = $(WX_GTK_LIBS)
 
-codeblocks_LDADD =  ../sdk/libcodeblocks.la \
+devkitide_LDADD =  ../sdk/libcodeblocks.la \
 			$(WX_LIBS) \
 			$(WX_GTK_LIBS)
 
-codeblocks_SOURCES = app.cpp \
+devkitide_SOURCES = app.cpp \
 			appglobals.cpp \
 			backtracedlg.cpp \
 			breakpointsdlg.cpp \
