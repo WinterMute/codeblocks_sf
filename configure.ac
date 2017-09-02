@@ -425,53 +425,15 @@ AC_CONFIG_FILES([Makefile
 	src/plugins/scriptedwizard/Makefile
 	src/plugins/scriptedwizard/resources/Makefile
 	src/plugins/scriptedwizard/resources/3ds/Makefile
-	src/plugins/scriptedwizard/resources/arduino/Makefile
-	src/plugins/scriptedwizard/resources/arm/Makefile
-	src/plugins/scriptedwizard/resources/avr/Makefile
 	src/plugins/scriptedwizard/resources/c_file/Makefile
-	src/plugins/scriptedwizard/resources/console/Makefile
-	src/plugins/scriptedwizard/resources/d/Makefile
-	src/plugins/scriptedwizard/resources/directx/Makefile
-	src/plugins/scriptedwizard/resources/dll/Makefile
-	src/plugins/scriptedwizard/resources/d_source/Makefile
 	src/plugins/scriptedwizard/resources/ds_arm9/Makefile
 	src/plugins/scriptedwizard/resources/empty/Makefile
 	src/plugins/scriptedwizard/resources/empty_file/Makefile
-	src/plugins/scriptedwizard/resources/fltk/Makefile
-	src/plugins/scriptedwizard/resources/fortran/Makefile
 	src/plugins/scriptedwizard/resources/gamecube/Makefile
 	src/plugins/scriptedwizard/resources/gba/Makefile
-	src/plugins/scriptedwizard/resources/glfw/Makefile
-	src/plugins/scriptedwizard/resources/glut/Makefile
-	src/plugins/scriptedwizard/resources/gtk/Makefile
 	src/plugins/scriptedwizard/resources/h_file/Makefile
-	src/plugins/scriptedwizard/resources/irrlicht/Makefile
-	src/plugins/scriptedwizard/resources/java/Makefile
-	src/plugins/scriptedwizard/resources/lf/Makefile
-	src/plugins/scriptedwizard/resources/matlab_csf/Makefile
-	src/plugins/scriptedwizard/resources/mcs51/Makefile
-	src/plugins/scriptedwizard/resources/msp430/Makefile
-	src/plugins/scriptedwizard/resources/ogre/Makefile
-	src/plugins/scriptedwizard/resources/opencv/Makefile
-	src/plugins/scriptedwizard/resources/opengl/Makefile
-	src/plugins/scriptedwizard/resources/plugins/Makefile
-	src/plugins/scriptedwizard/resources/ppc/Makefile
-	src/plugins/scriptedwizard/resources/qt4/Makefile
-	src/plugins/scriptedwizard/resources/qt4dll/Makefile
-	src/plugins/scriptedwizard/resources/qt5/Makefile
-	src/plugins/scriptedwizard/resources/sdl/Makefile
-	src/plugins/scriptedwizard/resources/sdl2/Makefile
-	src/plugins/scriptedwizard/resources/sfml/Makefile
-	src/plugins/scriptedwizard/resources/sharedlib/Makefile
-	src/plugins/scriptedwizard/resources/smartwin/Makefile
-	src/plugins/scriptedwizard/resources/staticlib/Makefile
-	src/plugins/scriptedwizard/resources/stlport/Makefile
 	src/plugins/scriptedwizard/resources/switch/Makefile
-	src/plugins/scriptedwizard/resources/sys/Makefile
-	src/plugins/scriptedwizard/resources/tricore/Makefile
 	src/plugins/scriptedwizard/resources/wii/Makefile
-	src/plugins/scriptedwizard/resources/win32gui/Makefile
-	src/plugins/scriptedwizard/resources/wxwidgets/Makefile
 	src/plugins/todo/Makefile
 	src/plugins/todo/resources/Makefile
 	src/plugins/abbreviations/Makefile
@@ -576,10 +538,6 @@ AC_CONFIG_FILES([Makefile
 	src/tools/cb_share_config/Makefile
 	src/tools/ConsoleRunner/Makefile
 	src/tools/CBLauncher/Makefile
-	src/templates/Makefile
-	src/templates/common/Makefile
-	src/templates/unix/Makefile
-	src/templates/win32/Makefile
 	src/wxsmith/Makefile
 	codeblocks.pc
 	codeblocks.spec.fedora

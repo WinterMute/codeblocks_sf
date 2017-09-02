@@ -1,51 +1,13 @@
 SUBDIRS = 3ds \
-	arduino \
-	arm \
-	avr \
 	c_file \
-	console \
-	d \
-	directx \
-	dll \
-	d_source \
 	ds_arm9 \
 	empty \
 	empty_file \
-	fltk  \
-	fortran \
 	gamecube \
 	gba \
-	glfw \
-	glut \
-	gtk \
 	h_file \
-	irrlicht \
-	java \
-	lf \
-	matlab_csf \
-	mcs51 \
-	msp430 \
-	ogre \
-	opencv \
-	opengl \
-	plugins \
-	ppc \
-	qt4 \
-	qt4dll \
-	qt5 \
-	sdl \
-	sdl2 \
-	sfml \
-	smartwin \
-	staticlib \
-	stlport \
-	sharedlib \
 	switch \
-	sys \
-	tricore \
-	wii \
-	win32gui \
-	wxwidgets
+	wii
 
 pkgdata_DATA = scriptedwizard.zip
 CLEANFILES = $(pkgdata_DATA)
