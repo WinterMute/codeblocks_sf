@@ -2019,12 +2019,13 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
     }
 
     if (   target->GetTargetType() == ttDynamicLib
-        || target->GetTargetType() == ttStaticLib )
+        || target->GetTargetType() == ttStaticLib
+        || target->GetTargetType() == ttCommandsOnly )
     {
         // check for hostapp
         if (target->GetHostApplication().IsEmpty())
         {
-            cbMessageBox(_("You must select a host application to \"run\" a library..."));
+            cbMessageBox(_("You must select a host application to \"run\" a this target..."));
             m_pProject->SetCurrentlyCompilingTarget(0);
             return -1;
         }
@@ -2032,7 +2033,8 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
         command << hostapStr << strSPACE;
         command << target->GetExecutionParameters();
     }
-    else if (target->GetTargetType() != ttCommandsOnly)
+
+    if (!target->GetHostApplication().IsEmpty())
     {
         command << execStr << strSPACE;
         command << target->GetExecutionParameters();
@@ -2055,6 +2057,8 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
         command << target->GetExecutionParameters();
     }
     Manager::Get()->GetMacrosManager()->ReplaceMacros(command, target);
+    Manager::Get()->GetMacrosManager()->ReplaceEnvVars(command);
+
     wxString script = command;
 
     if (platform::macosx)
