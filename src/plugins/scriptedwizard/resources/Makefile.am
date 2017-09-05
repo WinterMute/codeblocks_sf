@@ -1,4 +1,5 @@
-SUBDIRS = arduino \
+SUBDIRS = 3ds \
+	arduino \
 	arm \
 	avr \
 	c_file \
@@ -7,10 +8,12 @@ SUBDIRS = arduino \
 	directx \
 	dll \
 	d_source \
+	ds_arm9 \
 	empty \
 	empty_file \
 	fltk  \
 	fortran \
+	gba \
 	glfw \
 	glut \
 	gtk \
