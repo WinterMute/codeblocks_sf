@@ -73,6 +73,11 @@ function RegisterWizards()
     RegisterWizard(wizProject,     _T("tricore"),      _T("TriCore Project"),       _T("Embedded Systems"));
     RegisterWizard(wizProject,     _T("ppc"),          _T("PowerPC Project"),       _T("Embedded Systems"));
     RegisterWizard(wizProject,     _T("mcs51"),        _T("MCS51 Project"),         _T("Embedded Systems"));
+ 
+    RegisterWizard(wizProject,     _T("3ds"),          _T("3DS"),                   _T("devkitARM"));
+    RegisterWizard(wizProject,     _T("ds_arm9"),      _T("DS arm9"),               _T("devkitARM"));
+    RegisterWizard(wizProject,     _T("gba"),          _T("Gameboy Advance"),       _T("devkitARM"));
+
     //
     // file wizards
     //

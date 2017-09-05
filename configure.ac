@@ -424,6 +424,7 @@ AC_CONFIG_FILES([Makefile
 	src/plugins/projectsimporter/resources/Makefile
 	src/plugins/scriptedwizard/Makefile
 	src/plugins/scriptedwizard/resources/Makefile
+	src/plugins/scriptedwizard/resources/3ds/Makefile
 	src/plugins/scriptedwizard/resources/arduino/Makefile
 	src/plugins/scriptedwizard/resources/arm/Makefile
 	src/plugins/scriptedwizard/resources/avr/Makefile
@@ -433,10 +434,12 @@ AC_CONFIG_FILES([Makefile
 	src/plugins/scriptedwizard/resources/directx/Makefile
 	src/plugins/scriptedwizard/resources/dll/Makefile
 	src/plugins/scriptedwizard/resources/d_source/Makefile
+	src/plugins/scriptedwizard/resources/ds_arm9/Makefile
 	src/plugins/scriptedwizard/resources/empty/Makefile
 	src/plugins/scriptedwizard/resources/empty_file/Makefile
 	src/plugins/scriptedwizard/resources/fltk/Makefile
 	src/plugins/scriptedwizard/resources/fortran/Makefile
+	src/plugins/scriptedwizard/resources/gba/Makefile
 	src/plugins/scriptedwizard/resources/glfw/Makefile
 	src/plugins/scriptedwizard/resources/glut/Makefile
 	src/plugins/scriptedwizard/resources/gtk/Makefile
