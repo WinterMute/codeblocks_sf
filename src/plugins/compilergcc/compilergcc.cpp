@@ -61,6 +61,7 @@
 #include "compilerMINGW.h"
 #include "compilerdevkitARM.h"
 #include "compilerdevkitPPC.h"
+#include "compilerdevkitA64.h"
 
 #include "compilerGNUARM.h"
 #include "compilerMSVC.h"
@@ -921,6 +922,7 @@ void CompilerGCC::DoRegisterCompilers()
     CompilerFactory::RegisterCompiler(new CompilerG95);
     CompilerFactory::RegisterCompiler(new CompilerdevkitARM);
     CompilerFactory::RegisterCompiler(new CompilerdevkitPPC);
+    CompilerFactory::RegisterCompiler(new CompilerdevkitA64);
     if (platform::windows || platform::Linux || nonPlatComp)
         CompilerFactory::RegisterCompiler(new CompilerGNUARM);
 
