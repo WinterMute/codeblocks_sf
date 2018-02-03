@@ -40,6 +40,7 @@ SUBDIRS = 3ds \
 	staticlib \
 	stlport \
 	sharedlib \
+	switch \
 	sys \
 	tricore \
 	wii \

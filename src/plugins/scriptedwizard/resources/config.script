@@ -81,6 +81,8 @@ function RegisterWizards()
     RegisterWizard(wizProject,     _T("gamecube"),     _T("Nintendo Gamecube"),     _T("devkitPPC"));
     RegisterWizard(wizProject,     _T("wii"),          _T("Nintendo Wii"),          _T("devkitPPC"));
 
+    RegisterWizard(wizProject,     _T("switch"),       _T("Nintendo Switch"),       _T("devkitA64"));
+
     //
     // file wizards
     //

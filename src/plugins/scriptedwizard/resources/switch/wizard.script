@@ -1,0 +1,76 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Code::Blocks new project wizard script
+//
+// Project: Nintendo Switch
+// Author:  Dave Murphy
+//
+//
+////////////////////////////////////////////////////////////////////////////////
+
+function BeginWizard()
+{
+    local intro_msg = _T("Welcome to the new Switch project wizard!\n" +
+                        "This wizard will guide you to create a new 3DS project.\n\n" +
+                        "When you 're ready to proceed, please click \"Next\"...");
+
+    // intro
+    Wizard.AddInfoPage(_T("EmptyProjectIntro"), intro_msg);
+    // select project name and path
+    Wizard.AddProjectPathPage();
+}
+
+function GetFilesDir()
+{
+    return _T("switch/files");
+}
+
+function SetupProject(project) {
+
+    project.SetMakefileCustom(true);
+    project.SetCompilerID(_T("devkita64-gcc"));
+    project.AddIncludeDir(_T("$(TARGET_COMPILER_DIR)") + _T("..") + wxFILE_SEP_PATH + _T("libnx") + wxFILE_SEP_PATH + _T("include"));
+    project.AddLibDir(_T("$(TARGET_COMPILER_DIR)") + _T("..") + wxFILE_SEP_PATH + _T("libnx") + wxFILE_SEP_PATH + _T("lib"));
+
+    project.AddLinkerOption(_T("-specs=$(TARGET_COMPILER_DIR)") + _T("..") + wxFILE_SEP_PATH + _T("libnx") + wxFILE_SEP_PATH +_T("switch.specs"));
+    project.AddLinkLib(_T("nx"));
+
+    project.AddCompilerOption(_T("-mword-relocations"));
+    project.AddCompilerOption(_T("-mtune=mpcore"));
+    project.AddCompilerOption(_T("-mfloat-abi=hard"));
+    project.AddCompilerOption(_T("-march=armv6k"));
+
+    project.AddLinkerOption(_T("-march=armv8-a"));
+    project.AddLinkerOption(_T("-mfloat-abi=hard"));
+
+    project.SetVar(_T("HOST_APPLICATION"),_T("$(TARGET_COMPILER_DIR)") + _T("../emulators/yuzu/yuzu"),false);
+    local title = project.GetTitle();
+
+    local target = project.GetBuildTarget(Wizard.GetDebugName());
+
+    if (!IsNull(target)) {
+        target.SetCompilerID(_T("devkita64-gcc"));
+        target.SetTargetType(ttNative);
+        target.SetTargetFilenameGenerationPolicy(tgfpPlatformDefault,tgfpNone);
+        target.SetOutputFilename(title + _T("-debug.elf"));
+        target.SetHostApplication(_T("$(HOST_APPLICATION)"));
+        target.SetExecutionParameters(_T("$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).nro"));
+    }
+
+    target = project.GetBuildTarget(Wizard.GetReleaseName());
+
+    if (!IsNull(target)) {
+        target.SetCompilerID(_T("devkita64-gcc"));
+        target.SetTargetType(ttNative);
+        target.SetTargetFilenameGenerationPolicy(tgfpPlatformDefault,tgfpNone);
+        target.SetOutputFilename(title + _T(".elf"));
+        target.SetHostApplication(_T("$(HOST_APPLICATION)"));
+        target.SetExecutionParameters(_T("$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).nro"));
+    }
+
+    project.AddToExtensions(_T("debugger/scriptadd/remote_debugging/options:conn_type=0"));
+    project.AddToExtensions(_T("debugger/scriptadd/remote_debugging/options:ip_address=localhost"));
+    project.AddToExtensions(_T("debugger/scriptadd/remote_debugging/options:ip_port=1000"));
+
+    return true;
+}

@@ -466,6 +466,7 @@ AC_CONFIG_FILES([Makefile
 	src/plugins/scriptedwizard/resources/smartwin/Makefile
 	src/plugins/scriptedwizard/resources/staticlib/Makefile
 	src/plugins/scriptedwizard/resources/stlport/Makefile
+	src/plugins/scriptedwizard/resources/switch/Makefile
 	src/plugins/scriptedwizard/resources/sys/Makefile
 	src/plugins/scriptedwizard/resources/tricore/Makefile
 	src/plugins/scriptedwizard/resources/wii/Makefile
