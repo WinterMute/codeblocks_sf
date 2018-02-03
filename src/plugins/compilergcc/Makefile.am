@@ -41,6 +41,7 @@ libcompiler_la_SOURCES = advancedcompileroptionsdlg.cpp \
 			compilerG95.cpp \
 			compilerGNUARM.cpp \
 			compilerdevkitARM.cpp \
+			compilerdevkitPPC.cpp \
 			compilerGNUFortran.cpp \
 			compilerXML.cpp \
 			directcommands.cpp
@@ -68,6 +69,7 @@ noinst_HEADERS = advancedcompileroptionsdlg.h \
 			compilerOWgenerator.h \
 			compilerGNUARM.h \
 			compilerdevkitARM.h \
+			compilerdevkitPPC.h \
 			compilerGNUFortran.h \
 			compilerXML.h \
 			directcommands.h
