@@ -1,0 +1,56 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Code::Blocks new project wizard script
+//
+// Project: Nintendo Wii
+// Author:  Dave Murphy
+//
+//
+////////////////////////////////////////////////////////////////////////////////
+
+function BeginWizard()
+{
+    local intro_msg = _T("Welcome to the new Wii project wizard!\n" +
+                        "This wizard will guide you to create a new Wii project.\n\n" +
+                        "When you 're ready to proceed, please click \"Next\"...");
+
+    // intro
+    Wizard.AddInfoPage(_T("EmptyProjectIntro"), intro_msg);
+    // select project name and path
+    Wizard.AddProjectPathPage();
+}
+
+function GetFilesDir()
+{
+    return _T("wii/files");
+}
+
+function SetupProject(project) {
+
+    project.SetMakefileCustom(true);
+
+    project.SetCompilerID(_T("devkitppc-gcc"));
+
+    project.AddIncludeDir(_T("$(TARGET_COMPILER_DIR)") + wxFILE_SEP_PATH + _T("..") + wxFILE_SEP_PATH + _T("libogc") + wxFILE_SEP_PATH + _T("include"));
+    project.AddLibDir(_T("$(TARGET_COMPILER_DIR)") + _T("..") + wxFILE_SEP_PATH + _T("libogc") + wxFILE_SEP_PATH + _T("lib/wii"));
+
+    local title = project.GetTitle();
+
+    local target = project.GetBuildTarget(Wizard.GetDebugName());
+
+    if (!IsNull(target)) {
+        target.SetCompilerID(_T("devkitppc-gcc"));
+        target.SetTargetFilenameGenerationPolicy(tgfpPlatformDefault,tgfpNone);
+        target.SetOutputFilename(title + _T("-debug.dol"));
+    }
+
+    target = project.GetBuildTarget(Wizard.GetReleaseName());
+
+    if (!IsNull(target)) {
+        target.SetCompilerID(_T("devkitppc-gcc"));
+        target.SetTargetFilenameGenerationPolicy(tgfpPlatformDefault,tgfpNone);
+        target.SetOutputFilename(title + _T(".dol"));
+    }
+
+    return true;
+}

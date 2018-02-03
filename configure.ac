@@ -439,6 +439,7 @@ AC_CONFIG_FILES([Makefile
 	src/plugins/scriptedwizard/resources/empty_file/Makefile
 	src/plugins/scriptedwizard/resources/fltk/Makefile
 	src/plugins/scriptedwizard/resources/fortran/Makefile
+	src/plugins/scriptedwizard/resources/gamecube/Makefile
 	src/plugins/scriptedwizard/resources/gba/Makefile
 	src/plugins/scriptedwizard/resources/glfw/Makefile
 	src/plugins/scriptedwizard/resources/glut/Makefile
@@ -467,6 +468,7 @@ AC_CONFIG_FILES([Makefile
 	src/plugins/scriptedwizard/resources/stlport/Makefile
 	src/plugins/scriptedwizard/resources/sys/Makefile
 	src/plugins/scriptedwizard/resources/tricore/Makefile
+	src/plugins/scriptedwizard/resources/wii/Makefile
 	src/plugins/scriptedwizard/resources/win32gui/Makefile
 	src/plugins/scriptedwizard/resources/wxwidgets/Makefile
 	src/plugins/todo/Makefile

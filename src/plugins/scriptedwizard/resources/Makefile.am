@@ -13,6 +13,7 @@ SUBDIRS = 3ds \
 	empty_file \
 	fltk  \
 	fortran \
+	gamecube \
 	gba \
 	glfw \
 	glut \
@@ -41,6 +42,7 @@ SUBDIRS = 3ds \
 	sharedlib \
 	sys \
 	tricore \
+	wii \
 	win32gui \
 	wxwidgets
 
