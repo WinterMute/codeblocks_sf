@@ -56,7 +56,7 @@
   -->
   <asmv3:application xmlns="urn:schemas-microsoft-com:asm.v1">
     <asmv3:windowsSettings xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">
-      <dpiAware>False</dpiAware>
+      <dpiAware>True</dpiAware>
     </asmv3:windowsSettings>
   </asmv3:application>
 
