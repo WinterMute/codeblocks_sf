@@ -1436,24 +1436,6 @@
 		<Unit filename="plugins/compilergcc/compiler_defs.h">
 			<Option target="Compiler" />
 		</Unit>
-		<Unit filename="plugins/compilergcc/compilerdevkitARM.cpp">
-			<Option target="Compiler" />
-		</Unit>
-		<Unit filename="plugins/compilergcc/compilerdevkitARM.h">
-			<Option target="Compiler" />
-		</Unit>
-		<Unit filename="plugins/compilergcc/compilerdevkitPPC.cpp">
-			<Option target="Compiler" />
-		</Unit>
-		<Unit filename="plugins/compilergcc/compilerdevkitPPC.h">
-			<Option target="Compiler" />
-		</Unit>
-		<Unit filename="plugins/compilergcc/compilerdevkitA64.cpp">
-			<Option target="Compiler" />
-		</Unit>
-		<Unit filename="plugins/compilergcc/compilerdevkitA64.h">
-			<Option target="Compiler" />
-		</Unit>
 		<Unit filename="plugins/compilergcc/compilererrors.cpp">
 			<Option target="Compiler" />
 		</Unit>
@@ -1694,12 +1676,6 @@
 			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/resources/compilers/options_cygwin.xml">
-			<Option target="Compiler" />
-		</Unit>
-		<Unit filename="plugins/compilergcc/resources/compilers/options_devkitarm-gcc.xml">
-			<Option target="Compiler" />
-		</Unit>
-		<Unit filename="plugins/compilergcc/resources/compilers/options_devkitppc-gcc.xml">
 			<Option target="Compiler" />
 		</Unit>
 		<Unit filename="plugins/compilergcc/resources/compilers/options_dmc.xml">
