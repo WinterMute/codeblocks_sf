@@ -304,7 +304,7 @@ class Splash
                 dc.SelectObject(bmp);
                 cbSplashScreen::DrawReleaseInfo(dc);
                 dc.SelectObject(wxNullBitmap);
-                m_pSplash = new cbSplashScreen(bmp, -1, nullptr, -1, wxNO_BORDER | wxFRAME_NO_TASKBAR | wxFRAME_SHAPED);
+                m_pSplash = new cbSplashScreen(bmp);
                 Manager::Yield();
             }
         }
