@@ -1,10 +1,10 @@
 #!/bin/bash
 
 PREFIX_DIR="@prefix@"
-INSTALL_SHAREDIR="${PREFIX_DIR}/share/codeblocks"
-APPNAME="CodeBlocks"
+INSTALL_SHAREDIR="${PREFIX_DIR}/share/devkitide"
+APPNAME="devkitIDE"
 APPDIR="${APPNAME}.app"
-SHAREDATADIR="`pwd`/${APPDIR}/Contents/Resources/share/codeblocks"
+SHAREDATADIR="`pwd`/${APPDIR}/Contents/Resources/share/devkitide"
 
 if [ ! -d "$APPDIR" ]
 then
@@ -16,11 +16,11 @@ then
     mkdir -p "${SHAREDATADIR}/plugins/"
 fi
 
-cp ${INSTALL_SHAREDIR}/osx_bundle/codeblocks.plist "$APPDIR/Contents/Info.plist"
+cp devkitide.plist "$APPDIR/Contents/Info.plist"
 cp ${INSTALL_SHAREDIR}/osx_bundle/icons/*.icns "${APPDIR}/Contents/Resources"
 
 
-PLUGINS=`echo ${PREFIX_DIR}/lib/codeblocks/plugins/*.dylib `
+PLUGINS=`echo ${PREFIX_DIR}/lib/devkitide/plugins/*.dylib `
 EXECUTABLES=`echo ${PREFIX_DIR}/bin/* `
 
 ALL_DEPS=""
@@ -79,7 +79,7 @@ echo "Copying plugins"
 for file in ${PLUGINS}
 do
 	echo $file
-	cp $file "${APPDIR}/Contents/Resources/share/codeblocks/plugins/"
+	cp $file "${APPDIR}/Contents/Resources/share/devkitide/plugins/"
 	install_name_tool -id @loader_path/$(basename $file) "${SHAREDATADIR}/plugins/$(basename $file)"
 	copy_deps "${SHAREDATADIR}/plugins/$(basename $file)"
 done

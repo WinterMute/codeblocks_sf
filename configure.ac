@@ -373,7 +373,7 @@ AC_SUBST(DATE, "SVN_DATE")
 
 if test "x${target_vendor}" = "xapple"; then
     AC_CONFIG_FILES([bundle.sh], [chmod +x bundle.sh])
-    AC_CONFIG_FILES(codeblocks.plist)
+    AC_CONFIG_FILES(devkitide.plist)
 fi
 
 AC_CONFIG_FILES([Makefile
