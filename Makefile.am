@@ -10,7 +10,7 @@ pkgconfig_DATA = codeblocks.pc
 if DARWIN
 osxbundledir = $(pkgdatadir)/osx_bundle
 dist_osxbundle_DATA = bundle.sh \
-					codeblocks.plist
+					devkitide.plist
 
 osxbundle_iconsdir = $(osxbundledir)/icons
 dist_osxbundle_icons_DATA = $(top_srcdir)/src/src/resources/icons/*.icns
@@ -19,7 +19,7 @@ endif
 EXTRA_DIST = bootstrap \
 		codeblocks.spec \
 		codeblocks.spec.fedora \
-		codeblocks.plist \
+		devkitide.plist \
 		BUGS \
 		BUILD \
 		COMPILERS \
